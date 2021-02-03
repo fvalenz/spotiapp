@@ -1,0 +1,22 @@
+<div class="card-columns m-4">
+
+    <div *ngFor="let item of items" class="card">
+        <img [src]="item.images | noimage" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <!-- Esto solo aparece en home -->
+            <p class="card-text">
+                <span *ngFor="let artista of item.artists" class="badge badge-success">
+                    {{artista.name}}
+                </span>
+            </p>
+            <!-- Esto solo aparece en search -->
+            <p class="card-text">
+                <span *ngFor="let genero of item.genres" class="badge badge-success">
+                    {{genero}}
+                </span>
+            </p>
+        </div>
+    </div>
+
+</div>
